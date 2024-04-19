@@ -1,0 +1,10 @@
+@import url("../style.css");
+
+
+body{
+    display: grid;
+    background-color: #f4f4f4;
+}
+header, footer{
+    background-color: #333;
+}

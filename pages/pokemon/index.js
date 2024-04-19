@@ -1,3 +1,8 @@
+let listaSalva = localStorage.getItem("@listagem_task");
+    let tarefas = listaSalva!==null && JSON.parse(listaSalva) || []; 
+
+
+ const main = querySelector("main");   
 function changePageTitle(title) {
     document.title = title
   }
@@ -90,3 +95,36 @@ function changePageTitle(title) {
 
   // Chamando a função para exibir os dados ao carregar a página
   displayVisitData();
+
+
+function getTask(){
+  const task = document.querySelector("#inputTask");
+  if(task.nodeValue ==="" || task.nodeValue == null){
+   alert(task.nodeValue);
+    return false;
+  }else{
+    console.log("deu certo" + task.nodeValue );
+    let task1 = task.nodeValue;
+ 
+    tarefas.push(task1);
+
+    list();
+    saveData();
+  }
+
+}
+
+function saveData(){
+  localStorage.setItem("@listagem_task", json.stringify(tarefas));
+}
+
+function list(){
+  main.innerHTML = "";
+
+  tarefas.forEach(item=>{
+    const p = document.createElement("p");//cria um p no hmtl
+    p.textContent = item;
+
+    main.appendChild(p);
+  })
+}
