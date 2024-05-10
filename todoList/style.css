@@ -3,8 +3,44 @@
 
 body{
     display: grid;
+    grid-template-rows: 1fr 6fr 1fr;
     background-color: #f4f4f4;
+    gap: 20px;
+   
+}
+main, form{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    
 }
 header, footer{
+    height: 15vh;
     background-color: #333;
+}
+
+input, textarea{
+    width: 15vw ;
+    height: 8vh;
+    margin: 5px;
+}
+
+input::placeholder, textarea::placeholder{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: larger;
+}
+
+fieldset{
+    padding: 20px;
+    width: 65vw;
+    border: 1px solid #3333335a;
+}
+
+button{
+    color: #f4f4f4;
+    background-color: #0074d9;
+    width: 10vw;
+    height: 5vh;
+    border: none;
 }

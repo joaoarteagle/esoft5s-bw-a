@@ -1,8 +1,4 @@
-let listaSalva = localStorage.getItem("@listagem_task");
-    let tarefas = listaSalva!==null && JSON.parse(listaSalva) || []; 
-
-
- const main = querySelector("main");   
+   
 function changePageTitle(title) {
     document.title = title
   }
@@ -61,70 +57,6 @@ function changePageTitle(title) {
     getSearchParams()
   })
 
-//atividade do visitas e time
-
-  // Função para atualizar os dados de visita
-  function updateVisitData() {
-    let visitData = JSON.parse(localStorage.getItem('visitData')) || { count: 0, lastVisit: null };
-    visitData.count++;
-    visitData.lastVisit = new Date();
-
-    localStorage.setItem('visitData', JSON.stringify(visitData));
-    return visitData;
-  }
-
-  // Função para formatar a data
-  function formatDate(date) {
-    return new Intl.DateTimeFormat('pt-BR', {
-      day: '2-digit',
-      month: '2-digit',
-      year: 'numeric',
-      hour: '2-digit',
-      minute: '2-digit'
-    }).format(date);
-  }
-
-  // Função para exibir os dados de visita no footer
-  function displayVisitData() {
-    let visitData = updateVisitData();
-    let formattedDate = formatDate(new Date(visitData.lastVisit));
-    let visitsText = `Esta página foi visitada ${visitData.count} vezes. A última visita foi: ${formattedDate}.`;
-
-    document.querySelector('#visits').textContent = visitsText;
-  }
-
-  // Chamando a função para exibir os dados ao carregar a página
-  displayVisitData();
 
 
-function getTask(){
-  const task = document.querySelector("#inputTask");
-  if(task.nodeValue ==="" || task.nodeValue == null){
-   alert(task.nodeValue);
-    return false;
-  }else{
-    console.log("deu certo" + task.nodeValue );
-    let task1 = task.nodeValue;
- 
-    tarefas.push(task1);
 
-    list();
-    saveData();
-  }
-
-}
-
-function saveData(){
-  localStorage.setItem("@listagem_task", json.stringify(tarefas));
-}
-
-function list(){
-  main.innerHTML = "";
-
-  tarefas.forEach(item=>{
-    const p = document.createElement("p");//cria um p no hmtl
-    p.textContent = item;
-
-    main.appendChild(p);
-  })
-}
