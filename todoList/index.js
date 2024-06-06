@@ -157,4 +157,5 @@ function saveTask(e){
 
  saveData();
  closeDialog();
+ location.reload();
  }
