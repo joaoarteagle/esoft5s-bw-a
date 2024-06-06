@@ -13,11 +13,37 @@
 
       
       <main id="main">
+
+        <dialog>
+            <form id="editTaskForm" onsubmit="editTask(event)">
+              <input
+                type="text"
+                name="title"
+                id="title"
+                required
+                placeholder="Informe o título da tarefa"
+              />
+              <textarea
+                id="description"
+                name="description"
+                required
+                placeholder="Informe a descrição da tarefa"
+              ></textarea>
+              <div>
+                <button type="submit" >Editar Tarefa</button>
+                <button type="button" onclick="closeDialog()">Cancelar</button>
+              </div>
+            </form>
+          </dialog>
+
+
         <form name="meu-form" onsubmit="saveTask(event)">
             <input type="text" name="task" id="inputTask" placeholder="Digite uma Tarefa" >
             <textarea name="description" id="description" placeholder="Informe a descrição da tarefa"></textarea>
             <button type="submit">Salvar Tarefa</button>
         </form>
+
+       
     
         
     </main>

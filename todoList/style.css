@@ -44,3 +44,18 @@ button{
     height: 5vh;
     border: none;
 }
+
+.edit_button{
+    position: absolute;
+    left: 75vw; 
+    background-color: #676767 ;
+    width: min-content;
+    border-radius: 5px;
+}
+.delete_button{
+    position: absolute;
+    left: 78vw; 
+    background-color: #676767 ;
+    width: min-content;
+    border-radius: 5px;
+}
